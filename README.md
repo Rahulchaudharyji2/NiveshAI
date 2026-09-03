@@ -74,6 +74,12 @@ OPENROUTER_API_KEY=your_openrouter_api_key
 
 # MongoDB
 MONGODB_URI=your_mongodb_connection_string
+
+# FastAPI backend URL
+# Local: http://localhost:8000
+# Production: https://nivesh-ai-backend.vercel.app
+NEXT_PUBLIC_API_URL=http://localhost:8000
+BACKEND_API_URL=http://localhost:8000
 ```
 
 ### Frontend Setup
@@ -197,7 +203,9 @@ npm run lint     # Run ESLint
 
 ### Vercel 
 1. Connect your GitHub repository to Vercel
-2. Configure environment variables
+2. Configure environment variables. For the frontend deployment, set both
+   `NEXT_PUBLIC_API_URL` and `BACKEND_API_URL` to your deployed FastAPI URL:
+   `https://nivesh-ai-backend.vercel.app`
 3. Deploy with automatic CI/CD
 
 ### Manual Deployment

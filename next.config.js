@@ -1,18 +1,23 @@
-// next.config.js
+const backendUrl = (
+  process.env.BACKEND_API_URL ||
+  process.env.NEXT_PUBLIC_API_URL ||
+  "http://localhost:8000"
+).replace(/\/$/, "");
+
 module.exports = {
   async rewrites() {
     return [
       {
         source: '/api/mutual/:path*',
-        destination: 'http://localhost:8000/api/mutual/:path*', // your FastAPI mutual funds route
+        destination: `${backendUrl}/api/mutual/:path*`,
       },
       {
         source: '/api/stock/:path*',
-        destination: 'http://localhost:8000/api/stock/:path*', // your FastAPI stock route
+        destination: `${backendUrl}/api/stock/:path*`,
       },
       {
         source: '/api/crypto/:path*',
-        destination: 'http://localhost:8000/api/crypto/:path*', // your FastAPI crypto route
+        destination: `${backendUrl}/api/crypto/:path*`,
       },
     ];
   },
