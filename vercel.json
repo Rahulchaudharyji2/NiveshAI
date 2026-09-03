@@ -1,0 +1,34 @@
+{
+  "services": {
+    "frontend": {
+      "root": ".",
+      "framework": "nextjs"
+    },
+    "backend": {
+      "root": "backend",
+      "entrypoint": "main:app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/stock/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/api/mutual/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/api/crypto/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/api/portfolio/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "frontend" }
+    }
+  ]
+}
