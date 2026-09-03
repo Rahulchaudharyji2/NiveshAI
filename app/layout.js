@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "NiveshAI",
-  description: "made with 💖 by Phoenix Arcana🐦‍🔥",
+  description: "made with 💖 by Beast Coders",
 };
 
 export default function RootLayout({ children }) {
